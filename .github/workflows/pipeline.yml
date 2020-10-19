@@ -20,8 +20,8 @@ jobs:
         run: |
           docker build \
           -t demo-image \
-          -t $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/demo-image .
+          -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/demo-image .
 
       - name: Push
         run: |
-          docker push $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/demo-image
+          docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/demo-image
