@@ -42,5 +42,5 @@ jobs:
           script: |
             docker ps
             $( aws ecr get-login --no-include-email )
-            docker pull AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/demo-image:latest
+            docker pull $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/demo-image:latest
             docker run -d -p 80:80 AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/demo-image:latest
