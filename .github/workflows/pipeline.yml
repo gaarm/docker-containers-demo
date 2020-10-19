@@ -17,11 +17,11 @@ jobs:
           $( aws ecr get-login --no-include-email )
 
       - name: Build and tag the image
-          run: |
-            docker build \
-            -t demo-image \
-            -t $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/demo-image .
+        run: |
+          docker build \
+          -t demo-image \
+          -t $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/demo-image .
 
       - name: Push
-          run: |
-            docker push $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/demo-image
+        run: |
+          docker push $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/demo-image
