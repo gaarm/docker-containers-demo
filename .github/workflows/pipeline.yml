@@ -25,6 +25,7 @@ jobs:
       - name: Build and tag the image
         run: |
           docker build \
+          -t 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:latest .
           -t 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:${GITHUB_SHA} .
 
       - name: Push
@@ -42,4 +43,4 @@ jobs:
             docker rm my-container
             $( aws ecr get-login --no-include-email )
             docker pull 475402197987.dkr.ecr.eu-central-1/demo-image:${GITHUB_SHA}
-            docker run -d --name my-container -p 80:80 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:${GITHUB_SHA}
+            docker run -d --name my-container -p 80:80 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:latest
