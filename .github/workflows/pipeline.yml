@@ -40,6 +40,7 @@ jobs:
           port: 22
           script: |
             docker stop my-container
+            docker rm my-container
             $( aws ecr get-login --no-include-email )
             docker pull 475402197987.dkr.ecr.eu-central-1/demo-image:latest
             docker run -d --name my-container -p 80:80 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:latest
