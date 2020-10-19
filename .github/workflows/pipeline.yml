@@ -26,10 +26,9 @@ jobs:
         run: |
           docker build \
           -t 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:latest .
-          -t 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:${GITHUB_SHA} .
 
       - name: Push
-        run: docker push 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:${GITHUB_SHA}
+        run: docker push 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:latest
 
       - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
@@ -42,5 +41,5 @@ jobs:
             docker stop my-container
             docker rm my-container
             $( aws ecr get-login --no-include-email )
-            docker pull 475402197987.dkr.ecr.eu-central-1/demo-image:${GITHUB_SHA}
+            docker pull 475402197987.dkr.ecr.eu-central-1/demo-image:latest
             docker run -d --name my-container -p 80:80 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:latest
