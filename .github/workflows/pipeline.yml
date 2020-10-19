@@ -39,7 +39,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
-            docker ps
+            docker stop my-container
             $( aws ecr get-login --no-include-email )
             docker pull 475402197987.dkr.ecr.eu-central-1/demo-image:latest
-            docker run -d -p 80:80 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:latest
+            docker run -d --name my-container -p 80:80 475402197987.dkr.ecr.eu-central-1.amazonaws.com/demo-image:latest
