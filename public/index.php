@@ -1,9 +1,12 @@
+<head>
+    <meta http-equiv="refresh" content="2">
+</head>
 <?php
 
-$ver = 2;
-echo "<h1>Hello from presentation.</h1>";
-echo sprintf("<h2>This is app version: %s</h2>", $ver);
+$ver = 3;
+echo "<h2>This is a demo app running from docker container.</h2> <br>\n";
+echo "<h3>This is app version: ". $ver ." </h3>";
 
-echo "<br>";
-echo "==========================";
-echo sprintf("<h3>Running on PHP version: %s</h3>", phpversion());
+echo "<br> \n";
+echo "========================== <br> \n";
+echo "<h4>Running on PHP version: ". phpversion() ." </h4>";
