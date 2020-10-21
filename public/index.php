@@ -3,7 +3,7 @@
 </head>
 <?php
 
-$ver = 4;
+$ver = 5;
 echo "<h2>This is a demo app running from docker container.</h2> <br>\n";
 echo "<h3>This is app version: ". $ver ." </h3>";
 
